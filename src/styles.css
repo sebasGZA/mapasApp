@@ -4,3 +4,9 @@ app-menu {
     left: 20px;
     z-index: 99999;
 }
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
