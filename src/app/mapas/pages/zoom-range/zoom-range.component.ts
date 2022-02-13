@@ -25,6 +25,7 @@ import * as mapboxgl from 'mapbox-gl';
 })
 export class ZoomRangeComponent implements AfterViewInit {
   mapa!: mapboxgl.Map
+  zoomLevel: number = 10
   @ViewChild('mapa') divMapa!: ElementRef
 
   constructor() {
@@ -36,16 +37,18 @@ export class ZoomRangeComponent implements AfterViewInit {
       container: this.divMapa.nativeElement, // container ID
       style: 'mapbox://styles/mapbox/streets-v11', // style URL
       center: [-75.567, 6.217], // starting position [lng, lat]
-      zoom: 10 // starting zoom
+      zoom: this.zoomLevel // starting zoom
     });
   }
 
   zoomOut() {
     this.mapa.zoomOut()
+    this.zoomLevel = this.mapa.getZoom()
   }
 
   zoomIn() {
     this.mapa.zoomIn()
+    this.zoomLevel = this.mapa.getZoom()
   }
 
 }
