@@ -1,4 +1,4 @@
-<div id="mapa" class="mapa-container">
+<div #mapa class="mapa-container">
 
 </div>
 
@@ -12,11 +12,11 @@
     </div>
 
     <div class="col-12">
-        <button class="btn btn-primary">
+        <button (click)="zoomOut()" class="btn btn-primary">
             -
         </button>
 
-        <button class="btn btn-primary float-end">
+        <button (click)="zoomIn()" class="btn btn-primary float-end">
             +
         </button>
     </div>
