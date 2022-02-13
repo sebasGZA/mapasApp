@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 
 @Component({
@@ -13,16 +13,16 @@ import * as mapboxgl from 'mapbox-gl';
     `
   ]
 })
-export class FullScreenComponent implements OnInit {
+export class FullScreenComponent implements AfterViewInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
 
     const map = new mapboxgl.Map({
       container: 'mapa', // container ID
       style: 'mapbox://styles/mapbox/streets-v11', // style URL
-      center: [-75.567 , 6.217], // starting position [lng, lat]
+      center: [-75.567, 6.217], // starting position [lng, lat]
       zoom: 10 // starting zoom
     });
   }
