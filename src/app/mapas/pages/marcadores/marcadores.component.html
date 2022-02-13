@@ -3,8 +3,8 @@
         + Agregar
     </li>
 
-    <li (click)="irMarcador()" class="list-group-item">
-        Marker 1
+    <li [ngStyle]="{'background-color':marcador.color}" *ngFor="let marcador of marcadores;let i=index" (click)="irMarcador()" class="list-group-item">
+        Marker {{i + 1}}
     </li>
 </ul>
 
